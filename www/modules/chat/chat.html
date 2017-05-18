@@ -1,0 +1,39 @@
+<ion-view class="chat-view">
+  <ion-header-bar align-title="left" class="bar-positive">
+    <div class="buttons">
+      <button class="button" ng-click="doSomething()">Left Button</button>
+    </div>
+    <h1 class="title">Chat</h1>
+    <div class="buttons">
+      <button class="button">Right Button</button>
+    </div>
+  </ion-header-bar>
+  <ion-content scroll="false">
+    <div class="chat-wrapper" ng-controller="chat">
+      <div class="chat-content">
+
+          <div ng-repeat="message in messages">
+            <strong>{{message.user.name}}:</strong>
+            <span>{{message.data}}</span>
+          </div>
+
+      </div>
+      <form name="chat-form" ng-submit="send()">
+        <div class="form-group">
+          <input type="text" placeholder="Message" name="user_message" ng-model="textbox">
+          <button type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-assertive">
+    <div class="buttons">
+      <button class="button">Left Button</button>
+    </div>
+    <h1 class="title">Title!</h1>
+    <div class="buttons" ng-click="doSomething()">
+      <button class="button">Right Button</button>
+    </div>
+  </ion-footer-bar>
+</ion-view>
+

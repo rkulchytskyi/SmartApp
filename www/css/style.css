@@ -1,0 +1,41 @@
+/* Empty. Add your own CSS if you like */
+.sc-general-background{
+  background-image: url(../img/michal-grosicki.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.chat-view{
+  background-color: #0a9dc7;
+}
+.chat-content{
+  background-color: #ffffff;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  height: 100%;
+}
+.chat-view input{
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  width: 92%;
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+}
+.chat-wrapper{
+  display: flex;
+  height: 100%;
+  width: 92%;
+  margin: 0 4%;
+  padding: 15px 0;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.chat-wrapper form{
+  width: 100%;
+}
+.form-group{
+  display: flex;
+
+}

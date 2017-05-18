@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Smart Chat</title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-database.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDIpEzLUsSJnANgKyh25EaYEt4Wueb2-N8",
+        authDomain: "smart-chat-a8f64.firebaseapp.com",
+        databaseURL: "https://smart-chat-a8f64.firebaseio.com",
+        projectId: "smart-chat-a8f64",
+        storageBucket: "smart-chat-a8f64.appspot.com",
+        messagingSenderId: "98447470791"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic.cloud.min.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="bower_components/rltm/web/rltm.js"></script>
+    <script src="lib/angular-chat/angular-chat.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.module.js"></script>
+    <script src="js/app.constants.js"></script>
+    <script src="js/app.run.js"></script>
+    <script src="js/app.config.js"></script>
+    <script src="js/app.routes.js"></script>
+    <script src="js/app.core.js"></script>
+
+    <!--Controllers-->
+    <script src="modules/auth/auth.controller.js"></script>
+    <script src="modules/general/general.controller.js"></script>
+    <script src="modules/chat/chat.controller.js"></script>
+
+    <!--Services-->
+    <script src="modules/auth/auth.login.service.js"></script>
+    <script src="modules/auth/auth.register.service.js"></script>
+
+    <!--<script src="modules/dist/auth/auth.controller.js"></script>
+    <script src="modules/dist/auth/auth.login.service.js"></script>
+    <script src="modules/dist/auth/auth.register.service.js"></script>
+    <script src="modules/dist/general/general.controller.js"></script>-->
+  </head>
+
+  <body ng-app="starter">
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<ion-view view-title="Authentication " id="Authentication">
+  <ion-header-bar align-title="center" class="bar-balanced">
+    <h1 class="title">Authentication</h1>
+  </ion-header-bar>
+  <ion-content>
+
+    <!--<div ng-show="vm.login" style="text-align: center;" class="bar-header padding">
+      <h3 class="title" style="margin: 0;">Hello, {{vm.displayName}}!</h3>
+    </div>-->
+
+    <form name="settingsForm">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" placeholder="Email" ng-model="vm.settingsData.email" required>
+        </label>
+        <label  class="item item-input item-icon-right">
+          <span class="input-label">Password</span><i class="icon ion-eye" on-touch="showPassword = !showPassword"></i>
+          <input type="password" id="password" placeholder="Password" ng-model="vm.settingsData.pass" ng-hide="showPassword" required >
+          <input type="text" id="passwordRaw" placeholder="Password" ng-model="vm.settingsData.pass" ng-show="showPassword">
+        </label>
+      </div>
+      <div class="padding" >
+        <div class="button-bar">
+          <button class="button button-block button-balanced text-bold button-rounded button-next" data-ng-click="vm.login()" ng-disabled="settingsForm.$invalid" >Login<ion-spinner ng-show="vm.spinner" class="spinner-energized" icon="lines"></ion-spinner>
+          </button>
+          <button class="button button-block button-balanced text-bold button-rounded button-next" data-ng-click="vm.register()" ng-disabled="settingsForm.$invalid" >Register<ion-spinner ng-show="vm.spinner" class="spinner-energized" icon="lines"></ion-spinner>
+          </button>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

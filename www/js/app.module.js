@@ -11,7 +11,8 @@
     'ngCordova',
     'ionic.cloud',
     'starter.core',
-    'chat'
+    'chat',
+    'pubnub.angular.service'
   ]);
 
 })();

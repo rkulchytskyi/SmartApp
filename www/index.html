@@ -39,8 +39,11 @@
       firebase.initializeApp(config);
     </script>
 
+
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.8.0.js"></script>
+    <script src="https://cdn.pubnub.com/sdk/pubnub-angular/pubnub-angular-4.0.2.min.js"></script>
     <script src="lib/ionic.cloud.min.js"></script>
     <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
     <script src="bower_components/rltm/web/rltm.js"></script>
@@ -57,6 +60,7 @@
     <script src="js/app.routes.js"></script>
     <script src="js/app.core.js"></script>
 
+
     <!--Controllers-->
     <script src="modules/auth/auth.controller.js"></script>
     <script src="modules/general/general.controller.js"></script>
@@ -66,6 +70,8 @@
     <script src="modules/auth/auth.login.service.js"></script>
     <script src="modules/auth/auth.register.service.js"></script>
 
+    <!--Directives-->
+    <script src="js/services/workWithLocalStorage.service.js"></script>
     <!--<script src="modules/dist/auth/auth.controller.js"></script>
     <script src="modules/dist/auth/auth.login.service.js"></script>
     <script src="modules/dist/auth/auth.register.service.js"></script>

@@ -1,38 +1,11 @@
 (function(){
   'use strict';
 
-  /*function AuthController(LoginService, $state, $ionicPopup) {
-    let vm = this;
-    vm.loginUser = false;
-    vm.login = login;
-    vm.settingsData = {
-      email: '',
-      pass: ''
-    };
-
-    // Login to app
-    function login(){
-      console.log("LOGIN user: " + vm.settingsData.email + " - PW: " + vm.settingsData.pass);
-
-      LoginService.loginUser(vm.settingsData.email, vm.settingsData.pass).success(function(data) {
-
-        let alertPopup = $ionicPopup.alert({
-          title: 'Login success!'
-        });
-        $state.go('app');
-      }).error(function(data) {
-        let alertPopup = $ionicPopup.alert({
-          title: 'Login failed!',
-          template: 'Please check your credentials!'
-        });
-      });
-    }
-
-  }*/
-
   class AuthController{
-    constructor(LoginService, RegisterService, $state, $ionicPopup){
+    constructor(LoginService, WorkWithLocalStorage, RegisterService, $state, $ionicPopup){
+
       this.LoginService = LoginService;
+      this.WorkWithLocalStorage = WorkWithLocalStorage;
       this.RegisterService = RegisterService;
       this.$state = $state;
       this.$ionicPopup = $ionicPopup;
@@ -52,13 +25,17 @@
         let alertPopup = this.$ionicPopup.alert({
           title: 'Login success!'
         });
+
         this.$state.go('general');
+        this.WorkWithLocalStorage.saveToLocalStorage('userName', this.settingsData.email);
+
       }).error((data) => {
 
         let alertPopup = this.$ionicPopup.alert({
           title: 'Login failed!',
           template: 'Please check your credentials!'
         });
+
       });
     }
 
@@ -69,16 +46,21 @@
 
       this.RegisterService.registerUser(this.userId, this.settingsData.email, this.settingsData.pass)
         .then( () => {
+
             let alertPopup = this.$ionicPopup.alert({
               title: 'Registered success!'
             });
+
             this.$state.go('general');
+            this.WorkWithLocalStorage.saveToLocalStorage('userName', this.settingsData.email);
+
           }, () => {
 
             let alertPopup = this.$ionicPopup.alert({
               title: 'Registered failed!',
               template: 'This email already exist.'
             });
+
           });
     }
   }
@@ -87,6 +69,6 @@
     .module('starter')
     .controller('AuthController', AuthController);
 
-  AuthController.$inject = ['LoginService', 'RegisterService', '$state', '$ionicPopup'];
+  AuthController.$inject = ['LoginService', 'WorkWithLocalStorage', 'RegisterService', '$state', '$ionicPopup'];
 
 })();

@@ -30,8 +30,8 @@
         views: {
           'menuContent': {
             templateUrl: 'modules/chat/chat.html',
-            /*controller: 'ChatController',
-            controllerAs: 'vm',*/
+            controller: 'chat',
+            controllerAs: 'vm',
           }
         }
       })
